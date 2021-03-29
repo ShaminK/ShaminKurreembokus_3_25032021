@@ -1,0 +1,143 @@
+@import "libs/reset.scss";
+
+* {
+    font-family: 'Roboto', sans-serif;
+
+    p{
+        font-weight: 100;
+    }
+}
+
+
+// +++++++++++++++++++++++++++++++++++++
+/* +++       Version Mobile          +++*/
+// +++++++++++++++++++++++++++++++++++++
+
+@media (max-width:721px) {
+    @import "libs/properties.scss";
+
+    .btn {
+        width: 45%;
+        background: linear-gradient( #FF79DA, #9356DC);
+        color: white;
+        padding: 15px;
+        border-radius: 25px;
+        border: none;
+    }
+    // navigation
+
+    nav {
+        width: 100%;
+        padding: 15px;
+        @extend %centerElement;
+
+        .nav__img {
+            width: 40%;
+        }
+    }
+
+    // header
+    header {
+        @extend %centerElement;
+        flex-direction: column;
+        background-color: rgb(234, 234, 234);
+        width: 100%;
+        padding: 15px;
+        border-top: solid 3px rgb(212, 212, 212);
+
+        .location {
+            @extend %centerElement;
+
+            .location__logo {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    section {
+        .exploration {
+            @extend %centerElement;
+            background-color: rgb(246, 246, 246);
+            flex-direction: column;
+            padding: 15px;
+            align-items: center;
+
+            .exploration__title{
+                width: 50%;
+                text-align: center;
+                margin: 10px 0 ;
+            }
+
+            .exploration__description{
+                width: 60%;
+                text-align: center;
+                margin: 10px 0 ;
+            }
+
+            .exploration__btn {
+                margin: 10px 0 20px ;
+            }
+
+        }
+    }
+
+    .function {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        align-items: center;
+
+        .functon__headtitle {
+            width: 100%;
+        }
+
+        .function__list {
+            @extend %centerElement;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+
+            .function__step {
+                background-color: rgb(246, 246, 246);
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 20px 0;
+                margin: 10px 0;
+                border-radius: 20px;
+                box-shadow: 0px 2px 9px 1px rgb(212, 212, 212);
+
+
+                .function__number {
+                    width: 25px;
+                    height: 25px;
+                    background-color: #9356DC;
+                    border-radius: 100%;
+                    text-align: center;
+                    color: white;
+                    position: absolute;
+                    left: 25px;
+                }
+
+                .function__logo {
+                    width: 20%;
+                    margin-left: 40px;
+                }
+
+                .function__title {
+                    width: 70%;
+                }
+            }
+
+            .function__select {
+                background-color: rgb(245, 237, 255);
+
+                .function__logo__select {
+                    color: #9356DC;
+                }
+            }
+        }
+    }
+
+}
