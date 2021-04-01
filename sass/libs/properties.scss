@@ -2,3 +2,26 @@
     display: flex;
     justify-content: center;
 }
+
+//  box-shadow
+%boxshadow {
+     box-shadow: 0px 2px 9px 1px rgb(212, 212, 212);
+}
+
+
+// border raduis
+$radius : 15px ;
+
+%borderRadius {
+    border-radius: $radius;
+}
+
+%borderTopRadius {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+%borderBottomRadius {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}

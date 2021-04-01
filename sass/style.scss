@@ -8,6 +8,10 @@
     }
 }
 
+a {
+    text-decoration: none;
+}
+
 
 // +++++++++++++++++++++++++++++++++++++
 /* +++       Version Mobile          +++*/
@@ -106,7 +110,7 @@
                 padding: 20px 0;
                 margin: 10px 0;
                 border-radius: 20px;
-                box-shadow: 0px 2px 9px 1px rgb(212, 212, 212);
+                @extend %boxshadow;
 
 
                 .function__number {
@@ -139,5 +143,76 @@
             }
         }
     }
+    main {
+        padding: 15px;
+        background-color: rgb(246, 246, 246);
 
+        .resto__list {
+            padding: 15px;
+        }
+
+        .card__resto {
+            @extend %borderRadius;
+            padding-bottom: 20px;
+            position: relative;
+
+            .resto__new {
+                background-color: #99E2D0;
+                padding: 5px;
+                color:darken($color: #99E2D0, $amount: 40);
+                position: absolute;
+                top: 5%;
+                right: 5%;
+            }
+
+            .resto__section__img {
+
+                .img__resto__pic {
+                @extend %borderTopRadius;
+                }
+            }
+
+            .resto__section__info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: white;
+                align-items: center;
+                padding: 10px;
+                @extend %borderBottomRadius;
+                @extend %boxshadow;
+            }
+
+        }
+    }
+
+    footer {
+        background-color: rgb(53, 53, 53);
+        padding: 20px;
+
+        .footer__logo {
+            color: white;
+            margin-bottom: 20px;
+            font-family: 'Shrikhand', cursive;
+        }
+
+        .footer__element {
+            display: flex;
+            flex-direction: row;
+            padding: 5px 0;
+        }
+
+        .footer__element__logo {
+            color: white;
+            width: 5%;
+            margin-right: 6px;
+            
+        }
+
+        .footer__element__name {
+            color: white;
+        }
+
+
+    }
 }
