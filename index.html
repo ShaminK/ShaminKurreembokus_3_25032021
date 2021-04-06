@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -20,12 +20,23 @@
 </head>
 
 <body>
-    <!-- Barre de navigation/logo -->
+    <!-- Page de chargement -->
+    <div class="loading">
+        <div class="loading__case">
+            <h1 class="loading__title">Chargement</h1>
+            <div class="loading__bar">
+                <div class="loading__progress"></div>
+            </div>
+        </div>
+    </div>
+    <!-- contenu de la page -->
+    <div class="content">
+        <!-- Barre de navigation/logo -->
     <nav>
         <img src="images/ohmyfood.png" alt="" class="nav__img">
     </nav>
 
-    <!-- header: localisation/exploration restaurants -->
+    <!-- header: localisation restaurants -->
     <header>
         <div class="location">
             <i class="fas fa-map-marker-alt location__logo"></i>
@@ -33,6 +44,7 @@
         </div>
     </header>
 
+    <!-- Exploration des restaurants  -->
     <section>
         <div class="exploration">
             <h1 class="exploration__title">Réservez le menu qui vous convient</h1>
@@ -41,8 +53,9 @@
         </div>
     </section>
 
+    <!-- Fonctionnement du site -->
     <section class="function">
-        <h1 class="functon__headtitle">Fonctionnement</h1>
+        <h1 class="function__headtitle">Fonctionnement</h1>
         <div class="function__list">
             <div class="function__step">
                 <p class="function__number">1</p>
@@ -64,80 +77,91 @@
         </div>
     </section>
 
+    <!-- Liste des restaurants -->
     <main>
         <h1>Restaurants</h1>
         <div class="resto__list">
-            <article class="card__resto">
-                <div class="resto__new">Nouveau</div>
-                <a href="" class="resto__section__img">
-                    <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="" class="img__resto__pic">
-                </a>
 
+            <div href="#" class="card__resto">
+                <div class="resto__new">Nouveau</div>
+                <a href="">
+                    <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt=""
+                        class="img__resto__pic">
+                </a>
                 <div class="resto__section__info">
-                    <a href="" class="resto__descrip">
+                    <div href="" class="resto__descrip">
                         <h3>La palette du goût</h3>
                         <p>Mènilmontant</p>
-                    </a>
+                    </div>
                     <div class="resto__heart">
                         <i class="far fa-heart"></i>
                     </div>
                 </div>
-            </article>
 
-            <article class="card__resto">
+
+
+
+            </div>
+
+            <div href="#" class="card__resto">
                 <div class="resto__new">Nouveau</div>
-                <a href="" class="resto__section__img">
+                <a href="">
                     <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="" class="img__resto__pic">
                 </a>
-
                 <div class="resto__section__info">
-                    <a href="" class="resto__descrip">
+                    <div href="" class="resto__descrip">
                         <h3>La note enchantée</h3>
                         <p>Charonne</p>
-                    </a>
+                    </div>
                     <div class="resto__heart">
                         <i class="far fa-heart"></i>
                     </div>
                 </div>
-            </article>
 
-            <article class="card__resto">
+
+            </div>
+
+            <div href="#" class="card__resto">
                 <div class="resto__new">Nouveau</div>
-                <a href="" class="resto__section__img">
+                <a href="">
                     <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="" class="img__resto__pic">
                 </a>
-
                 <div class="resto__section__info">
-                    <a href="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" class="resto__descrip">
+                    <div href="" class="resto__descrip">
                         <h3>À la française</h3>
                         <p>Cité Rouge</p>
-                    </a>
+                    </div>
                     <div class="resto__heart">
                         <i class="far fa-heart"></i>
                     </div>
                 </div>
-            </article>
 
-            <article class="card__resto">
+
+            </div>
+
+            <div href="#" class="card__resto">
                 <div class="resto__new">Nouveau</div>
-                <a href="" class="resto__section__img">
-                    <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="" class="img__resto__pic">
+                <a href="">
+                    <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt=""
+                        class="img__resto__pic">
                 </a>
-
                 <div class="resto__section__info">
-                    <a href="" class="resto__descrip">
+                    <div href="" class="resto__descrip">
                         <h3>Le délice des sens</h3>
-                        <p>Cité Rouge</p>
-                    </a>
+                        <p>Folie-Méricourt</p>
+                    </div>
                     <div class="resto__heart">
                         <i class="far fa-heart"></i>
                     </div>
                 </div>
-            </article>
+
+
+            </div>
 
         </div>
     </main>
 
+    <!-- Bas de page -->
     <footer>
         <h4 class="footer__logo">ohmyfood</h4>
         <div class="footer__list">
@@ -161,6 +185,8 @@
         </div>
     </footer>
 
+    </div>
+    
 </body>
 
 </html>

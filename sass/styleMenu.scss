@@ -1,0 +1,293 @@
+@import "libs/reset.scss";
+@import "libs/component.scss";
+
+* {
+    font-family: 'Roboto', sans-serif;
+
+    p{
+        font-weight: 100;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    @extend %btn ;
+    &:hover {
+    @extend %btnHover;
+}
+}
+
+body {
+    max-width: 1440px;
+}
+// +++++++++++++++++++++++++++++++++++++
+/* +++       Version Mobile          +++*/
+// +++++++++++++++++++++++++++++++++++++
+
+
+// navigation
+
+nav {
+    width: 100%;
+        padding: 15px;
+        @extend %centerElement;
+        position: relative;
+
+       .nav__back{
+           width: 10%;
+           position: absolute;
+           top: 18px;
+           left: 15px;
+
+           .nav__back__arrow {
+               width: 100%;
+               font-size: 20px;
+           }
+       } 
+
+        .nav__img {
+            width: 40%;
+        }
+}
+
+
+// image header
+header {
+    width: 100%;
+    .img__bg {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+// contenu principale
+
+main {
+    position: relative;
+    background: $grey;
+    width: 100%;
+    
+    
+    .contentMenu {
+        @extend %borderTopRadius;
+        position: relative;
+        top: -80px;
+        background-color: $grey;
+        width: 100%;
+        padding: 15px;
+
+
+         .resto__title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            margin-top: 20px;
+
+            .resto__name {
+            font-family: 'Shrikhand', cursive;
+            font-size: 30px;
+            }
+
+            .fa-heart {
+                font-size: 30px;
+            }
+
+
+        }
+        .menus {
+            width: 100%;
+            @extend %centerElement;
+            align-items: center;
+            flex-direction: column;
+            
+            article {
+                width: 100%;
+
+                .article__title {
+                    margin-bottom: 10px;
+                    .article__name{
+                        font-size: 25px;
+                        margin-bottom: 5px;
+                    }
+
+                .article__underlign{
+                    background-color: $green;
+                    width: 40px;
+                    height: 4px;
+                    }
+                }
+
+            .menu__list {
+                @extend %centerElement;
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu__card {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 20px 0;
+                align-items: center;
+                background: $white;
+                @extend %borderRadius;
+                max-width: 600px;
+                    .bloc__infoPrice{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        padding: 0 15px 0 15px;
+
+                        &:not(:hover) {
+                            width: 100%;
+                           justify-content: space-between;
+                        }
+
+                        &:hover + .menu__select {
+                            display:flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            width: 100px;
+                        }
+                    }
+
+                    .menu__select {
+                        display: none;
+                        height: 50px;
+
+                    
+                        &:hover {
+                            display: flex;
+                            width: 100px;
+                            justify-content: flex-end;
+                            align-items: center;
+                        }
+
+                        .fa-check-circle {
+                            font-size: 30px;
+                            width: 50px;
+                            height: 100%;
+                            text-align: center;
+                            background: $green;
+                            color: $white;
+                            padding-top: 9px;
+                            @extend %borderRightRadius;
+                        }
+                    }
+            }  
+            }
+        }
+        
+
+       
+          
+    }
+
+    .btn__section {
+        padding-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+// Bas de page
+footer {
+    background-color: $greyDark;
+    padding: 20px;
+    
+    .footer__logo {
+        color: $white;
+        margin-bottom: 20px;
+        font-family: 'Shrikhand', cursive;
+        }
+    
+    .footer__element {
+        display: flex;
+        flex-direction: row;
+        padding: 5px 0;
+        }
+    
+    .footer__element__logo {
+        color: $white;
+        width: 20px;
+        margin-right: 6px;             
+        }
+    
+    .footer__element__name {
+        color: $white;
+        }
+}
+
+// +++++++++++++++++++++++++++++++++++++
+/* +++       Version tablette        +++*/
+// +++++++++++++++++++++++++++++++++++++
+
+@media (min-width: 600px) and (max-width: 945px) {
+
+    // navigation
+    nav {
+        .nav__back {
+            .nav__back__arrow {
+                font-size: 50px;
+            }
+        }
+
+        .nav__img {
+            width: 30%;
+        }
+    }
+
+    // bas de page
+
+    footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+// +++++++++++++++++++++++++++++++++++++
+/* +++       Version desktop        +++*/
+// +++++++++++++++++++++++++++++++++++++
+
+@media (min-width: 945px) {
+
+    body {
+        padding: 0 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        
+    }
+        // navigation
+        nav {
+            .nav__img {
+                width: 25%;
+            }
+        }
+
+            // bas de page 
+        footer {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        .footer__list {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+}

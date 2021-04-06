@@ -1,4 +1,5 @@
 @import "libs/reset.scss";
+@import "libs/component.scss";
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -13,21 +14,93 @@ a {
 }
 
 
+
 // +++++++++++++++++++++++++++++++++++++
 /* +++       Version Mobile          +++*/
 // +++++++++++++++++++++++++++++++++++++
 
-@media (max-width:721px) {
-    @import "libs/properties.scss";
+
+   
 
     .btn {
-        width: 45%;
-        background: linear-gradient( #FF79DA, #9356DC);
-        color: white;
-        padding: 15px;
-        border-radius: 25px;
-        border: none;
+        @extend %btn ;
+        &:hover {
+        @extend %btnHover;
     }
+    }
+
+    // page de chargement
+    .loading {
+        width: 100%;
+        height: 100vh;
+        background: $pinkPurple;
+        @extend %centerElement;
+        
+        .loading__case {
+            // border: rgb(55, 73, 19) solid 1px;
+            width: 80%;
+            @extend %centerElement;
+            align-items: center;
+            flex-direction: column;
+            .loading__title {
+                // border: rgb(36, 64, 139) solid 1px;
+                width: 50%;
+                text-align: center;
+                font-family:'Shrikhand', cursive ;
+                font-size: 30px;
+                color: rgb(247, 240, 240);
+                padding-bottom: 20px;
+            }
+
+            .loading__bar {
+                border: white solid 3px;
+                width: 50%;
+                height: 50px;
+                background-color: $purple;
+                @extend %borderRadius;
+
+                .loading__progress {
+                    background-color: $pink;                    
+                    height: 100%;
+                    @extend %borderRadius;
+                    animation: loadingAvancement 2s;
+                }
+            }
+        }
+    }
+
+    @keyframes loadingAvancement {
+        from {
+            width: 0%;
+        }to{
+            width: 100%;
+        }
+    }
+    
+    // contenu de la page
+    .content {
+        // display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        animation: loadPage 3s;
+    }
+    
+    @keyframes loadPage {
+        0% {
+           opacity: 0; 
+        }50% {
+            opacity: 0;
+        }90%{
+            opacity: 0;
+        }99%{
+            opacity: 0.5;
+        }100%{
+            opacity: 1;
+        }
+    }
+
     // navigation
 
     nav {
@@ -44,7 +117,7 @@ a {
     header {
         @extend %centerElement;
         flex-direction: column;
-        background-color: rgb(234, 234, 234);
+        background-color: $grey;
         width: 100%;
         padding: 15px;
         border-top: solid 3px rgb(212, 212, 212);
@@ -58,10 +131,11 @@ a {
         }
     }
 
+    // Exploration
     section {
         .exploration {
             @extend %centerElement;
-            background-color: rgb(246, 246, 246);
+            background-color: $greyLight;
             flex-direction: column;
             padding: 15px;
             align-items: center;
@@ -85,6 +159,7 @@ a {
         }
     }
 
+    // Fonctionnement
     .function {
         display: flex;
         flex-direction: column;
@@ -100,9 +175,10 @@ a {
             flex-direction: column;
             align-items: center;
             width: 90%;
+            max-width: 600px;
 
             .function__step {
-                background-color: rgb(246, 246, 246);
+                background-color: $greyLight;
                 width: 100%;
                 display: flex;
                 flex-direction: row;
@@ -110,42 +186,47 @@ a {
                 padding: 20px 0;
                 margin: 10px 0;
                 border-radius: 20px;
+                position: relative;
                 @extend %boxshadow;
 
 
                 .function__number {
                     width: 25px;
                     height: 25px;
-                    background-color: #9356DC;
+                    background-color: $purple;
                     border-radius: 100%;
                     text-align: center;
                     color: white;
                     position: absolute;
-                    left: 25px;
+                    left: -12px;
+                    padding-top: 3px;
                 }
 
                 .function__logo {
                     width: 20%;
                     margin-left: 40px;
+                    padding-top: 3px;
                 }
 
                 .function__title {
-                    width: 70%;
+                    width: 60%;
                 }
             }
 
             .function__select {
-                background-color: rgb(245, 237, 255);
+                background-color: $purpleLight;
 
                 .function__logo__select {
-                    color: #9356DC;
+                    color: $purple;
                 }
             }
         }
     }
+
+    // Liste des restaurants
     main {
         padding: 15px;
-        background-color: rgb(246, 246, 246);
+        background-color: $greyLight;
 
         .resto__list {
             padding: 15px;
@@ -157,26 +238,28 @@ a {
             position: relative;
 
             .resto__new {
-                background-color: #99E2D0;
+                background-color: $green;
                 padding: 5px;
-                color:darken($color: #99E2D0, $amount: 40);
+                color:darken($color: $green, $amount: 40);
                 position: absolute;
                 top: 5%;
                 right: 5%;
             }
 
-            .resto__section__img {
 
-                .img__resto__pic {
+            .img__resto__pic {
                 @extend %borderTopRadius;
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
                 }
-            }
+            
 
             .resto__section__info {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                background-color: white;
+                background-color: $white;
                 align-items: center;
                 padding: 10px;
                 @extend %borderBottomRadius;
@@ -186,12 +269,13 @@ a {
         }
     }
 
+        // Bas de page
     footer {
-        background-color: rgb(53, 53, 53);
+        background-color: $greyDark;
         padding: 20px;
 
         .footer__logo {
-            color: white;
+            color: $white;
             margin-bottom: 20px;
             font-family: 'Shrikhand', cursive;
         }
@@ -203,16 +287,96 @@ a {
         }
 
         .footer__element__logo {
-            color: white;
-            width: 5%;
+            color: $white;
+            width: 20px;
             margin-right: 6px;
             
         }
 
         .footer__element__name {
-            color: white;
+            color: $white;
         }
-
-
     }
+
+
+// +++++++++++++++++++++++++++++++++++++
+/* +++       Version tablette        +++*/
+// +++++++++++++++++++++++++++++++++++++
+
+@media (min-width: 600px) and (max-width: 945px) {
+    // navigation
+    nav {
+        justify-content: flex-start;
+        .nav__img {
+            width: 30%;
+        }
+    }
+
+    // Liste des restaurants
+
+    main {
+        .resto__list {
+            padding: 0px;
+            padding-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .card__resto {
+                width: 47%;
+            }
+        }
+    }
+
+    // footer 
+    footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+// +++++++++++++++++++++++++++++++++++++
+/* +++       Version desktop        +++*/
+// +++++++++++++++++++++++++++++++++++++
+
+@media (min-width: 945px) {
+    
+    // navigation
+    nav {
+        .nav__img {
+            width: 25%;
+        }
+    }
+
+    // Liste des restaurant
+
+    main {
+        padding: 10px;
+        .resto__list {
+            padding: 0px;
+            padding-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .card__resto {
+                width: 24%;
+            }
+        }
+    }
+
+    // bas de page 
+    footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .footer__list {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+
+    
 }

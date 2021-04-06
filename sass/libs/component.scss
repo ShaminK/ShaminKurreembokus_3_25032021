@@ -1,0 +1,16 @@
+@import "properties.scss";
+
+%btn {
+    width: 45%;
+    background: $pinkPurple;
+    color: $white;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    max-width: 350px; 
+}
+
+
+%btnHover {
+        background: $pinkPurpleHover; 
+}
