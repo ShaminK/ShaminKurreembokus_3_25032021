@@ -1,16 +1,79 @@
 @import "properties.scss";
 
-%btn {
+
+// bouton----
+.btn {
     width: 45%;
     background: $pinkPurple;
     color: $white;
     padding: 15px;
     border-radius: 25px;
     border: none;
-    max-width: 350px; 
+    max-width: 350px;
+    z-index: 1;
+    position: relative;
+    &:hover {
+        &::after {
+            opacity: 1;
+        } 
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $pinkPurpleHover;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+        border-radius: 25px;
+        box-shadow: 2px 2px 5px $greyDark;
+    }
 }
 
+// coeurs
 
-%btnHover {
-        background: $pinkPurpleHover; 
+.resto__heart {
+    position: relative;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    
+    .fa-heart {
+        position: absolute;
+        font-size: 30px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .heart__empty {
+      width: 50px;
+      height: 50px;
+      background: $white;
+      overflow: hidden;
+      transition: height 1s;
+      z-index: 1;
+      &:hover {
+          height: 0px;
+      }
+    }
+    
+
+    .heart__full {
+     height: 50px;
+     z-index: -0;
+    background-image: $pinkPurple;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+
+     &:hover + .heart__empty {
+         height: 0px;
+     }
+    }
 }
