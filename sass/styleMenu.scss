@@ -39,6 +39,10 @@ nav {
            .nav__back__arrow {
                width: 100%;
                font-size: 30px;
+               color: $greyDark;
+               &:visited {
+                   color: $greyDark;
+               }
            }
        } 
 
@@ -214,7 +218,7 @@ main {
     }
 
     .btn__section {
-        padding-top: 50px;
+        padding: 40px 0 10px 0;
         width: 100%;
         display: flex;
         justify-content: center;

@@ -227,6 +227,7 @@ a {
             @extend %borderRadius;
             padding-bottom: 20px;
             position: relative;
+            
 
             .resto__new {
                 background-color: $green;
@@ -258,9 +259,7 @@ a {
                 align-items: center;
                 padding: 10px;
                 @extend %borderBottomRadius;
-                @extend %boxshadow;
-
-                
+                @extend %boxshadow;              
             }
 
         }
