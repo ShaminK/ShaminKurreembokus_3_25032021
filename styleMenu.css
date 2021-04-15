@@ -262,6 +262,13 @@ main .contentMenu .menus article .menu__card {
   max-width: 800px;
   overflow: hidden;
 }
+main .contentMenu .menus article .menu__card:hover .menu__select {
+  transform: translateX(0);
+  width: 100px;
+}
+main .contentMenu .menus article .menu__card:hover .menu__select .fa-check-circle {
+  transform: rotate(0deg);
+}
 main .contentMenu .menus article .menu__card .bloc__infoPrice {
   display: flex;
   flex-direction: row;
@@ -269,26 +276,12 @@ main .contentMenu .menus article .menu__card .bloc__infoPrice {
   justify-content: space-between;
   padding: 10px;
 }
-main .contentMenu .menus article .menu__card .bloc__infoPrice:hover + .menu__select {
-  transform: translateX(0);
-  width: 100px;
-}
-main .contentMenu .menus article .menu__card .bloc__infoPrice:hover + .menu__select .fa-check-circle {
-  transform: rotate(0deg);
-}
 main .contentMenu .menus article .menu__card .menu__select {
   width: 0px;
   transform: translate(50px);
   background-color: #99E2D0;
   transition: all 500ms ease-out;
   align-items: center;
-}
-main .contentMenu .menus article .menu__card .menu__select:hover {
-  transform: translateX(0);
-  width: 100px;
-}
-main .contentMenu .menus article .menu__card .menu__select:hover .fa-check-circle {
-  transform: rotate(0deg);
 }
 main .contentMenu .menus article .menu__card .menu__select .fa-check-circle {
   font-size: 30px;

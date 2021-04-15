@@ -165,6 +165,15 @@ main {
                 max-width: 800px;
                 overflow: hidden;
                 @extend %borderRadius;
+                &:hover {
+                    .menu__select {
+                        transform: translateX(0);
+                        width: 100px;
+                        .fa-check-circle {
+                        transform: rotate(0deg);
+                      }
+                    }
+                }
 
                 
 
@@ -174,14 +183,6 @@ main {
                     width: 100%;
                     justify-content: space-between;
                     padding: 10px;
-
-                    &:hover + .menu__select {
-                    transform: translateX(0);
-                      width: 100px;
-                      .fa-check-circle {
-                        transform: rotate(0deg);
-                      }
-                    }
                 }
 
                 .menu__select {
@@ -192,16 +193,8 @@ main {
                     @extend %centerElement;
                     align-items: center;
                     
-                    &:hover {
-                            transform: translateX(0);
-                            width: 100px;
-                            .fa-check-circle {
-                              transform: rotate(0deg);
-                            }
-                        }
 
                     .fa-check-circle {
-                        // background-color:violet;
                         font-size: 30px;
                         transform: rotate(90deg);
                         transition: transform 500ms 250ms;
