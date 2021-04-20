@@ -262,9 +262,12 @@ main .contentMenu .menus article .menu__card {
   max-width: 800px;
   overflow: hidden;
 }
+main .contentMenu .menus article .menu__card:hover .bloc__infoPrice {
+  width: 87%;
+}
 main .contentMenu .menus article .menu__card:hover .menu__select {
   transform: translateX(0);
-  width: 100px;
+  width: 13%;
 }
 main .contentMenu .menus article .menu__card:hover .menu__select .fa-check-circle {
   transform: rotate(0deg);
@@ -275,16 +278,35 @@ main .contentMenu .menus article .menu__card .bloc__infoPrice {
   width: 100%;
   justify-content: space-between;
   padding: 10px;
+  transition: width 500ms;
+}
+main .contentMenu .menus article .menu__card .bloc__infoPrice .menu__descrip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 7px;
+}
+main .contentMenu .menus article .menu__card .bloc__infoPrice .menu__descrip .menu__title, main .contentMenu .menus article .menu__card .bloc__infoPrice .menu__descrip .menu__info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .contentMenu .menus article .menu__card .bloc__infoPrice .menu__price {
+  display: flex;
+  align-items: flex-end;
+}
+main .contentMenu .menus article .menu__card .bloc__infoPrice .menu__price p {
+  font-weight: bold;
 }
 main .contentMenu .menus article .menu__card .menu__select {
-  width: 0px;
-  transform: translate(50px);
+  width: 0;
+  transform: translateX(50px);
   background-color: #99E2D0;
   transition: all 500ms ease-out;
   align-items: center;
 }
 main .contentMenu .menus article .menu__card .menu__select .fa-check-circle {
-  font-size: 30px;
+  font-size: 25px;
   transform: rotate(90deg);
   transition: transform 500ms 250ms;
   color: #ffffff;
@@ -317,6 +339,7 @@ footer .footer__element__logo {
 }
 footer .footer__element__name {
   color: #ffffff;
+  font-weight: lighter;
 }
 
 /* +++       Version tablette        +++*/

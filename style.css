@@ -260,7 +260,7 @@ section .exploration .exploration__btn {
   padding: 15px;
   align-items: center;
 }
-.function .functon__headtitle {
+.function .function__headtitle {
   width: 100%;
 }
 .function .function__list {
@@ -299,10 +299,10 @@ section .exploration .exploration__btn {
 .function .function__list .function__step .function__title {
   width: 60%;
 }
-.function .function__list .function__select {
+.function .function__list .function__step:hover {
   background-color: #f5edff;
 }
-.function .function__list .function__select .function__logo__select {
+.function .function__list .function__step:hover .function__logo {
   color: #9356DC;
 }
 
@@ -363,6 +363,7 @@ footer .footer__element__logo {
 }
 footer .footer__element__name {
   color: #ffffff;
+  font-weight: lighter;
 }
 
 /* +++       Version tablette        +++*/

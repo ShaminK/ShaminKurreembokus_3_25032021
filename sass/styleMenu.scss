@@ -156,6 +156,8 @@ main {
                 align-items: center;
             }
             
+
+
             .menu__card {
                 display: flex;
                 justify-content: space-between;
@@ -166,16 +168,17 @@ main {
                 overflow: hidden;
                 @extend %borderRadius;
                 &:hover {
+                    .bloc__infoPrice {
+                        width: 87%;
+                    }
                     .menu__select {
                         transform: translateX(0);
-                        width: 100px;
+                        width: 13%;
                         .fa-check-circle {
                         transform: rotate(0deg);
                         }
                     }
                 }
-
-                
 
                 .bloc__infoPrice {
                     display: flex;
@@ -183,11 +186,33 @@ main {
                     width: 100%;
                     justify-content: space-between;
                     padding: 10px;
+                    transition: width 500ms;
+
+                    .menu__descrip {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        margin-right: 7px;
+
+                        .menu__title , .menu__info {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        }
+                    }
+
+                    .menu__price {
+                        display: flex;
+                        align-items: flex-end;
+
+                        p {font-weight: bold;}
+                    }
+
                 }
 
                 .menu__select {
-                    width: 0px;
-                    transform: translate(50px);
+                    width: 0;
+                    transform: translateX(50px);
                     background-color: $green;
                     transition: all 500ms ease-out;
                     @extend %centerElement;
@@ -195,7 +220,7 @@ main {
                     
 
                     .fa-check-circle {
-                        font-size: 30px;
+                        font-size: 25px;
                         transform: rotate(90deg);
                         transition: transform 500ms 250ms;
                         color: $white;
@@ -244,6 +269,7 @@ footer {
     
     .footer__element__name {
         color: $white;
+        font-weight: lighter;
         }
 }
 

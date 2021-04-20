@@ -157,7 +157,7 @@ a {
         padding: 15px;
         align-items: center;
 
-        .functon__headtitle {
+        .function__headtitle {
             width: 100%;
         }
 
@@ -202,15 +202,17 @@ a {
                 .function__title {
                     width: 60%;
                 }
-            }
 
-            .function__select {
-                background-color: $purpleLight;
+                &:hover {
+                    background-color: $purpleLight;
 
-                .function__logo__select {
+                .function__logo {
                     color: $purple;
                 }
             }
+            }
+
+           
         }
     }
 
@@ -292,6 +294,7 @@ a {
 
         .footer__element__name {
             color: $white;
+            font-weight: lighter;
         }
     }
 
@@ -373,6 +376,8 @@ a {
             width: 100%;
             justify-content: space-around;
         }
+
+        
     }
 
     
